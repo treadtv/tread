@@ -1,0 +1,109 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,height=device-height">
+  <title>tread WOD</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--<link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/png">-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164167616-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164167616-1');
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCTT422');</script>
+</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCTT422"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div id="app">
+    <p class="controls">Boxing Cardio Workout</p>
+    <h2 id="status"><a href="https://www.instagram.com/treadhill/">@treadhill</a></h2>
+    <p class="large"><span id="sec"></span></p>
+<img id="help" src="workouts/startedgif.gif" alt="Well Folks, this gif is not loading" width="80%" height="50%">
+ 
+    <p class = "menu">
+        <button id="start">Start</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id ="paused"><button id="pause">Pause</button></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" id ="ended"><button id="complete">End</button></a>
+    </p>
+    <p class="controls" id="next">UP NEXT : 
+    </p>
+<audio id="myAudio">
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+      
+<audio id="beep">
+  <source src="countdown.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Watch the animation below if you have doubts in the motion.</p><img id="help" src="workouts//startedgif.gif" alt="Well Folks, this gif is not loading" width="70%" height="50%">
+
+  </div>
+
+</div>
+<div id="completed" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p>Thanks for completing the workout with us! 
+    <p>Visit <a href ="https://www.instagram.com/treadhill/">@treadhill </a> for more such workouts<br><br>
+      You worked out for <span id="min"></span> minutes.<br>
+    You burned approx. <span id="cal"></span> calories<br><br>
+       Boxing Cardio 
+        <div id ="worklist">
+      </div>
+        <br>
+      <button id="screenshot" onclick="wholePage()">Take Screenshot</button>
+      </p>
+  </div>
+
+</div>
+      
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="script_saturday.js"></script>
+    <script>
+function wholePage()
+{
+  html2canvas(document.body, {
+      onrendered: function(canvas)  
+      {
+        var img = canvas.toDataURL();
+        $("#result-image").attr('src', img).show();
+
+        canvas.toBlob(function(blob) {
+          saveAs(blob, "wholePage.png");
+        });
+      }
+  });
+  return false;
+}
+</script>
+</body>
+</html>
